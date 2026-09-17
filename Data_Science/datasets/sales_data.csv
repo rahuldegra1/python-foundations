@@ -1,0 +1,8 @@
+Date,Region,Product,Units_Sold,Revenue
+2026-09-01,North,Laptop,12,14400
+2026-09-02,South,Tablet,45,13500
+2026-09-02,North,Smartphone,80,48000
+2026-09-03,East,Laptop,8,9600
+2026-09-04,West,Tablet,60,18000
+2026-09-04,North,Smartwatch,105,21000
+2026-09-05,South,Smartphone,40,24000
