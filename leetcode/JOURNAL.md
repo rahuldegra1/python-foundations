@@ -31,3 +31,22 @@ A running log of what I tried and what actually clicked for each problem — wri
 ### 005 — Group Anagrams (Medium)
 - **Tried:** My first Medium-level problem — needed a way to group words that are anagrams of each other using sorted letters as a key.
 - **Learned:** `sorted()` returns a list, but dictionary keys must be hashable — lists aren't, so `"".join()` converts it into a string first, which is hashable and works as a key.
+
+---
+
+### 007 — Valid Parentheses
+- **Tried:** Handled indentation bugs and learned the hard way about LeetCode's Python 2 vs Python 3 dropdown crashing modern f-strings. Achieved a 0ms runtime.
+- **Learned:** A Stack is LIFO (Last-In, First-Out). By using `.append()` to push opening brackets and `.pop()` to evaluate closing brackets against a dictionary map, you can perfectly track the inner-most pairs.
+
+---
+
+### 008 — Number of Recent Calls
+- **Tried:** Built a hit-counter to track events strictly within a rolling 3000ms window. Hit type-hinting syntax errors before switching to the proper Python 3 environment. Achieved a 40ms runtime.
+- **Learned:** A Queue is FIFO (First-In, First-Out). Using `collections.deque` allows for fast `.popleft()` operations to kick out the oldest data at the front without forcing Python to shift the entire list in memory.
+
+---
+
+### Linear Algebra Fundamentals
+- **Magnitude and Direction:** A vector always combines an amount or length (magnitude) with a specific pathway it points along (direction), unlike a scalar which is just a single numeric value.
+- **Spatial Arrow vs. Data List:** A vector can be viewed geometrically as a directed arrow rooted in space or computer-scientifically as an ordered list of numbers representing coordinates.
+- **Linear Operations:** A vector can be added to another vector or scaled (multiplied by a regular number) to change its length or reverse its direction while maintaining predictable geometric rules.
