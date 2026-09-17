@@ -1,0 +1,7 @@
+# Ignore Python Virtual Environments and Cache
+env/
+__pycache__/
+
+# Ignore Data Science datasets
+*.csv
+Data_Science/datasets/
