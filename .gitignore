@@ -5,3 +5,4 @@ __pycache__/
 # Ignore Data Science datasets
 *.csv
 Data_Science/datasets/
+.env
