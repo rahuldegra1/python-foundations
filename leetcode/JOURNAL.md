@@ -34,6 +34,12 @@ A running log of what I tried and what actually clicked for each problem — wri
 
 ---
 
+### 006 — Valid Palindrome
+- **Tried:** Handling spaces, punctuation, and uppercase characters before checking the string.
+- **Learned:** Using two pointers (one at the start, one at the end) and moving them inward simultaneously allows you to verify symmetry in a single O(n) pass without creating reverse copies of the string.
+
+---
+
 ### 007 — Valid Parentheses
 - **Tried:** Handled indentation bugs and learned the hard way about LeetCode's Python 2 vs Python 3 dropdown crashing modern f-strings. Achieved a 0ms runtime.
 - **Learned:** A Stack is LIFO (Last-In, First-Out). By using `.append()` to push opening brackets and `.pop()` to evaluate closing brackets against a dictionary map, you can perfectly track the inner-most pairs.
@@ -43,6 +49,24 @@ A running log of what I tried and what actually clicked for each problem — wri
 ### 008 — Number of Recent Calls
 - **Tried:** Built a hit-counter to track events strictly within a rolling 3000ms window. Hit type-hinting syntax errors before switching to the proper Python 3 environment. Achieved a 40ms runtime.
 - **Learned:** A Queue is FIFO (First-In, First-Out). Using `collections.deque` allows for fast `.popleft()` operations to kick out the oldest data at the front without forcing Python to shift the entire list in memory.
+
+---
+
+### 009 — Two Sum II - Input Array Is Sorted
+- **Tried:** Implemented pointers at the absolute minimum (left) and maximum (right) values, beating 81.61% of Python users on runtime.
+- **Learned:** When an array is pre-sorted, using a Hash Map wastes memory. Placing pointers at opposite ends allows you to intuitively steer the sum directly to the target (drop the right if too high, raise the left if too low) in a single pass, operating in perfect O(1) space.
+
+---
+
+### 010 — Best Time to Buy and Sell Stock
+- **Tried:** Hit a "Time Limit Exceeded" infinite loop because I put the right pointer increment inside the `else` block, and returned `null` by forgetting the variable in the return statement.
+- **Learned:** The Sliding Window technique. Instead of checking every possible pair of days (O(n²)), use a left pointer for the buy day and a right pointer for the sell day. If you stumble across a price lower than your current buy price, instantly snap the left pointer to the right pointer's position. Keep pulling the right pointer forward to scan the rest of the array in O(n) time.
+
+---
+
+### 011 — Fibonacci Number
+- **Tried:** Implemented pure, naive recursion. The runtime was slow (655 ms, beating only 22%), proving visually why exponential branching is dangerous.
+- **Learned:** Every recursive function must have two things: a base case (the stop sign, like `if n == 0`) to prevent infinite loops, and a recursive step that calls a clone of itself (`self.fib(n - 1) + self.fib(n - 2)`). 
 
 ---
 

@@ -6,3 +6,4 @@ __pycache__/
 *.csv
 Data_Science/datasets/
 .env
+test.py 
