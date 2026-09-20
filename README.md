@@ -75,6 +75,12 @@ This repository documents my progression from basic terminal scripts to object-o
 | 003 | Contains Duplicate | Hash set with early exit | Accepted, O(n) time/space |
 | 004 | Valid Anagram | Hash map frequency counting | Accepted |
 | 005 | Group Anagrams (Medium)| Sorted-word as dictionary key, grouping into lists | Accepted, beats 95% runtime |
+| 006 | Valid Palindrome | Two Pointers (Inward) | Accepted |
+| 007 | Valid Parentheses | Stack (LIFO) with Dictionary | Accepted, 0ms runtime |
+| 008 | Number of Recent Calls | Queue (FIFO) with Deque | Accepted, 40ms runtime |
+| 009 | Two Sum II (Sorted) | Two Pointers (Opposite Ends), O(1) Space | Accepted, beats 81% runtime |
+| 010 | Best Time to Buy/Sell Stock | Sliding Window (Dynamic Two Pointers) | Accepted, beats 96% memory |
+| 011 | Fibonacci Number | Basic Recursion (Base Cases & Recursive Step) | Accepted |
 
 *Note: All problems include a local Problem Journal entry detailing the "what clicked" moment to bridge the gap between rote memorization and structural pattern recognition.*
 
@@ -87,12 +93,11 @@ This repository documents my progression from basic terminal scripts to object-o
 * **Cloud Deployment:** Configured production Gunicorn servers, locked `requirements.txt`, and launched live apps on Render via GitHub CI/CD.
 * **Data Science:** Ingested, cleaned, grouped, and visualized datasets using Pandas and Matplotlib.
 * **API Networking:** Fetched and parsed live nested JSON data from REST APIs.
-* **Computer Science Fundamentals:** Object-Oriented Programming (Classes, Inheritance, State), Binary Search implementations, and discrete math logic gating.
+* **Computer Science Fundamentals:** OOP (Classes, Inheritance, State), Binary Search implementations, and advanced algorithmic patterns (Hash Maps, Two Pointers, Sliding Window, Stacks, Queues, Recursion).
 * **Environment Security:** Isolated dependencies via `venv` and protected root directories using `.gitignore`.
 
 ---
 
 ## 🔜 Coming Next
 * **Data Science:** Performing data analysis on live Kaggle datasets.
-* **Algorithmic Patterns:** Mastering the Two Pointers technique on LeetCode.
-* **Applied Mathematics:** Expanding foundational Khan Academy linear algebra into vector matrices, transformations, and geometric calculus derivatives.
+* **Applied Mathematics:** Expanding foundational Khan Academy linear algebra into vector matrices, systems of linear equations, and determinants.
