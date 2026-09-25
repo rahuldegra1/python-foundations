@@ -2,9 +2,23 @@
 
 My programming work while pursuing an Online BCA at Manipal University Jaipur, built alongside a self-directed 3-year roadmap toward becoming an AI/ML engineer. Started August 2026.
 
-This repository documents my progression from basic terminal scripts to object-oriented programming, local data science pipelines, and finally, live cloud-deployed web applications.
+This repository documents my progression from basic terminal scripts to object-oriented programming, local data science pipelines, classical machine learning models, and live cloud-deployed web applications.
 
-**Tech Stack:** Python 3, Flask, SQLite, Pandas, REST APIs (`requests`), HTML/CSS, Git, Render (Cloud Hosting).
+**Tech Stack:** Python 3, Flask, SQLite, Pandas, Scikit-Learn, Matplotlib, REST APIs (`requests`), HTML/CSS, Git, Render (Cloud Hosting).
+
+---
+
+## 🤖 Local AI & Machine Learning Systems
+
+### 1. Local AI Decision Router (`LLM/`)
+* **What it does:** A hybrid local inference server built with PyTorch and FastAPI running on a local RTX 5050. It routes user prompts through `Qwen2.5-7B-Instruct` using dedicated endpoints (`/v1/choice`, `/v1/generate_code`).
+* **Why I built it:** To understand raw LLM architecture and inference routing without relying on paid APIs, mastering ChatML special-token formatting and local GPU memory allocation.
+* **What I'd do differently:** Implement streaming responses to reduce perceived latency on larger code generation tasks.
+
+### 2. California Housing Price Predictor (Year 1 Capstone)
+* **What it does:** An end-to-end data science pipeline (`housing_eda.py`) that loads geospatial housing data, visualizes price clusters using Matplotlib mapping, and trains a Scikit-Learn Linear Regression algorithm. Performance is evaluated mathematically using Mean Squared Error (MSE).
+* **Why I built it:** To graduate from basic binary classification (Titanic) to continuous regression, satisfying my Year 1 Capstone requirement by handling advanced feature correlation and descriptive statistics.
+* **What I'd do differently:** Swap the Linear Regression model for a Random Forest Regressor to handle non-linear geographical data and improve the MSE score.
 
 ---
 
@@ -12,7 +26,7 @@ This repository documents my progression from basic terminal scripts to object-o
 *These full-stack web applications were built using Flask, styled with HTML/CSS, backed by SQLite databases, and deployed live to the public internet via Render.*
 
 ### 1. Financial Expense Tracker ([Live Demo](https://financial-expense-tracker-55kv.onrender.com))
-* **What it does:** A production-ready financial dashboard that captures user expenses via HTML forms, permanently stores them in a cloud SQLite database, and dynamically calculates the total sum using Pandas (`df['amount'].sum()`). 
+* **What it does:** A production-ready financial dashboard that captures user expenses via HTML forms, permanently stores them in a cloud SQLite database, and dynamically calculates the total sum using Pandas (`df['amount'].sum()`).
 * **Why I built it:** To synthesize my roadmap skills into a final portfolio piece: database architecture (with automatic `init_db()` table generation), backend math logic, and cloud deployment via GitHub CI/CD.
 * **What I'd do differently:** Group the expenses by category (`.groupby()`) and render a Matplotlib pie chart directly on the web page to visualize spending habits.
 
@@ -28,16 +42,14 @@ This repository documents my progression from basic terminal scripts to object-o
 
 ---
 
-## 📊 Data Science Pipelines
-
-### Regional Sales Pipeline (`002_pandas_load.py`)
-* **What it does:** Ingests a raw `.csv` dataset, cleans text into `datetime64` time objects, runs a Split-Apply-Combine aggregation (`.groupby()`) to summarize regional revenue, and visualizes the math using a Matplotlib bar chart.
-* **Why I built it:** To establish a fully functioning local Python data science environment, bypass Windows execution policies, and practice structural data analysis.
-* **What I'd do differently:** Combine this logic with the `requests` library to pull and aggregate live data directly from the internet.
-
----
-
 ## 🖥️ Core Python Projects (Terminal & CLI)
+
+<details>
+<summary><strong>Applied Mathematics & Probability</strong></summary>
+
+* **Monty Hall Simulation:** A programmatic proof of conditional probability simulating the famous game show paradox to prove statistical advantage.
+* **Periodic Table Data Parser:** Parses structured `.csv` scientific data into in-memory dictionaries for immediate query lookups.
+</details>
 
 <details>
 <summary><strong>Object-Oriented Programming (OOP)</strong></summary>
@@ -52,16 +64,6 @@ This repository documents my progression from basic terminal scripts to object-o
 * **User Lookup Tool:** Dynamically fetches and parses live JSON data from an external server using `requests`, injecting user input into the URL via f-strings.
 * **Dynamic Quiz App:** A trivia game that reads questions, options, and correct answers from an external `questions.csv` file using `csv.DictReader`.
 * **Contact Book:** Stores contacts as dictionaries in a list and persists data to a text file (`contact.txt`).
-</details>
-
-<details>
-<summary><strong>Algorithmic Logic & Games</strong></summary>
-
-* **Binary Search:** Searches a sorted list for a target number by cutting the range in half (O(log n) time complexity).
-* **Tic-Tac-Toe:** A command-line 2-player game mapping a 3x3 grid to a 1D flat list (index 0-8) and checking 8 win combinations. 
-* **Number Guessing Game:** Computer picks a random number; player has 7 attempts to guess with high/low hints.
-* **Rock, Paper, Scissors:** Plays rounds against the computer using Python's `random` module, tracking session stats.
-* **Calculator & Unit Converter:** Menu-driven programs performing basic arithmetic and unit conversions with `try/except` error handling for invalid user inputs.
 </details>
 
 ---
@@ -81,6 +83,8 @@ This repository documents my progression from basic terminal scripts to object-o
 | 009 | Two Sum II (Sorted) | Two Pointers (Opposite Ends), O(1) Space | Accepted, beats 81% runtime |
 | 010 | Best Time to Buy/Sell Stock | Sliding Window (Dynamic Two Pointers) | Accepted, beats 96% memory |
 | 011 | Fibonacci Number | Basic Recursion (Base Cases & Recursive Step) | Accepted |
+| 012 | Binary Search | O(log n) efficiency via mid-point elimination | Accepted |
+| 013 | 3Sum (Medium) | Sorting combined with inward Two Pointers | Accepted |
 
 *Note: All problems include a local Problem Journal entry detailing the "what clicked" moment to bridge the gap between rote memorization and structural pattern recognition.*
 
@@ -88,16 +92,14 @@ This repository documents my progression from basic terminal scripts to object-o
 
 ## 🧠 Core Skills Demonstrated
 
+* **Machine Learning & Data Science:** Trained Scikit-Learn regression algorithms, evaluated MSE, and visualized geospatial data with Pandas and Matplotlib. 
 * **Full-Stack Web Development:** Engineered Flask routes, HTML/CSS templates, and `POST` form data interception.
 * **Database Architecture:** Built SQLite databases, executed raw SQL CRUD operations, and wrote dynamic cloud initialization scripts (`CREATE TABLE IF NOT EXISTS`).
 * **Cloud Deployment:** Configured production Gunicorn servers, locked `requirements.txt`, and launched live apps on Render via GitHub CI/CD.
-* **Data Science:** Ingested, cleaned, grouped, and visualized datasets using Pandas and Matplotlib.
-* **API Networking:** Fetched and parsed live nested JSON data from REST APIs.
-* **Computer Science Fundamentals:** OOP (Classes, Inheritance, State), Binary Search implementations, and advanced algorithmic patterns (Hash Maps, Two Pointers, Sliding Window, Stacks, Queues, Recursion).
-* **Environment Security:** Isolated dependencies via `venv` and protected root directories using `.gitignore`.
+* **Computer Science Fundamentals:** OOP (Classes, Inheritance, State), Local GPU inference routing, and advanced algorithmic patterns (Hash Maps, Two Pointers, Sliding Window, Stacks, Queues, Recursion).
 
 ---
 
 ## 🔜 Coming Next
-* **Data Science:** Performing data analysis on live Kaggle datasets.
-* **Applied Mathematics:** Expanding foundational Khan Academy linear algebra into vector matrices, systems of linear equations, and determinants.
+* **Deepening CS Depth (Year 2 Focus):** Implementing advanced Data Structures (Trees, Heaps) and diving into full SQL architectures (PostgreSQL schemas, JOINs). 
+* **Classical ML Mastery:** Expanding the housing regression capstone into Decision Trees, Random Forests, and cross-validation pipelines.
