@@ -7,3 +7,9 @@ __pycache__/
 Data_Science/datasets/
 .env
 test.py 
+numpy_test.py
+data_cleaning.py
+seaborn_test.py
+local_memory_db/
+.venv/
+Flask_blog/

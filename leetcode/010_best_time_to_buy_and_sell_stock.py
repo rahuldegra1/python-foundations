@@ -1,5 +1,5 @@
 class Solution:
-    def maxProfit(self, prices: list[int]) -> int:
+    def maxProfit(self, prices):
 
         l, r = 0, 1
         maxP = 0
@@ -13,4 +13,4 @@ class Solution:
             else:
                 l = r
             r += 1
-        return
+        return maxP

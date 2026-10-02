@@ -5,6 +5,7 @@ from typing import List, Dict
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import numpy as np
+from pydantic import BaseModel
 
 # 1. Initialize the core FastAPI application
 app = FastAPI(title="Local Jev & Coding API Engine")
@@ -38,6 +39,8 @@ class ScoreRequest(BaseModel):
 class CodeGenerationRequest(BaseModel):
     prompt: str
     language: str = "python"
+class RAGRequest(BaseModel):
+    prompt: str
 
 # --- CLASSIFICATION ENDPOINTS (System One Style) ---
 
@@ -79,11 +82,14 @@ def api_score(req: ScoreRequest):
 
 # --- NATIVE HIGH-LEVEL CODE GENERATION ENDPOINT (System Two Style) ---
 
-@app.post("/v1/generate_code", response_class=PlainTextResponse)
-def api_generate_code(req: CodeGenerationRequest):
+@app.post("/generate_code")
+def generate_response(req: RAGRequest): # Changed 'request' to 'req' to match your code
+    user_prompt = req.prompt 
+    
+    # Replace your old strict system prompt with this conversational one
     messages = [
-        {"role": "system", "content": f"You are an expert software architect. Output ONLY valid executable {req.language} code. Do not write conversational introductions, do not provide markdown blocks, and do not explain your thinking. Start generating code immediately."},
-        {"role": "user", "content": req.prompt}
+        {"role": "system", "content": "You are a helpful AI assistant. Answer the user's question using ONLY the provided context."},
+        {"role": "user", "content": user_prompt}
     ]
     
     # Properly format the special tokens for Qwen 2.5
@@ -118,4 +124,4 @@ def api_generate_code(req: CodeGenerationRequest):
             lines = lines[:-1]
         generated_code = "\n".join(lines).strip()
         
-    return generated_code
+    return {"response": generated_code}
