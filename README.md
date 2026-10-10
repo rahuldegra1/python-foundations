@@ -20,7 +20,7 @@ This repository documents my progression from basic terminal scripts to object-o
 * **Why I built it:** To benchmark local latent diffusion performance and explore offline multimodal generation workflows alongside the core text LLM server.
 
 ### 3. California Housing Price Predictor (Year 1 Capstone)
-* **What it does:** An end-to-end data science pipeline (`housing_eda.py`) that loads geospatial housing data, visualizes price clusters using Matplotlib mapping, and trains a Scikit-Learn Linear Regression algorithm. Performance is evaluated mathematically using Mean Squared Error (MSE).
+* **What it explored:** An earlier course project covered housing-price regression, geographic visualization, feature analysis, and Mean Squared Error. Its source script and dataset are not included in the current repository.
 * **Why I built it:** To graduate from basic binary classification to continuous regression, satisfying my Year 1 Capstone requirement by handling advanced feature correlation and descriptive statistics.
 * **What I'd do differently:** Swap the Linear Regression model for an ensemble Random Forest Regressor to capture non-linear geographical interactions.
 
